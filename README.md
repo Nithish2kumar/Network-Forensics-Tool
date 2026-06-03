@@ -32,7 +32,6 @@ PCAP-Traffic-Analyzer/
 ├── pcap.py
 ├── README.md
 ├── requirements.txt
-└── captured.pcap
 ```
 
 ---
