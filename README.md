@@ -1,16 +1,16 @@
 # 📡 PCAP Traffic Analyzer
 
-A lightweight network traffic analysis tool built using Python and Scapy for analyzing `.pcap` files and detecting suspicious network activities.
+A lightweight Python-based network traffic analysis tool built using Scapy for offline PCAP inspection and suspicious activity detection.
 
 ---
 
 ## 🚀 Features
 
-* 📂 Offline PCAP analysis
+* 📂 Offline `.pcap` file analysis
 * 🌐 Source and destination IP tracking
 * 📊 Protocol statistics
-* ⚠️ Suspicious port detection
-* 🧠 SYN packet analysis
+* ⚠️ Suspicious port access detection
+* 🧠 TCP SYN packet analysis
 * 📈 Traffic summary reporting
 
 ---
@@ -20,7 +20,7 @@ A lightweight network traffic analysis tool built using Python and Scapy for ana
 * Python 3
 * Scapy
 * Linux
-* Networking Fundamentals
+* TCP/IP Networking
 
 ---
 
@@ -30,9 +30,9 @@ A lightweight network traffic analysis tool built using Python and Scapy for ana
 PCAP-Traffic-Analyzer/
 │
 ├── pcap.py
-├── requirements.txt
 ├── README.md
-└── sample.pcap
+├── requirements.txt
+└── captured.pcap
 ```
 
 ---
@@ -45,7 +45,7 @@ Clone the repository:
 git clone https://github.com/Nithish2kumar/PCAP-Traffic-Analyzer.git
 ```
 
-Move into the project directory:
+Move into project directory:
 
 ```bash
 cd PCAP-Traffic-Analyzer
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Analyzer
+## ▶️ Run the Analyzer
 
 ```bash
 python3 pcap.py
@@ -71,7 +71,7 @@ python3 pcap.py
 
 ### Suspicious Port Monitoring
 
-Detects traffic targeting commonly attacked services:
+The analyzer detects traffic targeting commonly attacked ports:
 
 | Port | Service |
 | ---- | ------- |
@@ -86,35 +86,44 @@ Detects traffic targeting commonly attacked services:
 
 Tracks TCP SYN packets to identify:
 
-* Port scanning activity
-* Reconnaissance behavior
-* Possible SYN flood patterns
+* Reconnaissance activity
+* Port scanning behavior
+* Possible SYN flood attempts
 
 ---
 
 ## 📊 Example Output
 
 ```bash
-⚠️ Suspicious Port Access from: 192.168.1.7 to: 45.33.32.156 at port: 22
+⚠️ Suspicious port Access from: 192.168.1.7 to: 45.33.32.156 at port: 22
+
+--------------------------------------------------
 
 ------ PCAP ANALYSIS REPORT ------
 
 Total packets: 2599
 Total SYN packets: 1199
 
-Most Active Source IP: 192.168.1.7
-Most Active Destination IP: 45.33.32.156
+------ Protocol Used ------
+
+protocol 17: 27
+protocol 6: 2484
+
+------ Source IP Used ------
+
+192.168.1.7: 1304
+45.33.32.156: 1192
 ```
 
 ---
 
-## 🧠 Concepts Learned
+## 🧠 Concepts Used
 
 * Packet Parsing
 * TCP/IP Analysis
-* PCAP File Handling
-* Protocol Statistics
-* Traffic Investigation
+* PCAP File Processing
+* Protocol Inspection
+* Traffic Statistics
 * Threat Detection Basics
 * Network Forensics
 
@@ -122,23 +131,23 @@ Most Active Destination IP: 45.33.32.156
 
 ## 🔮 Future Improvements
 
+* Port Scan Detection Logic
+* Duplicate Alert Reduction
+* Protocol Name Mapping
 * GUI Dashboard
 * CSV Report Export
-* GeoIP Mapping
-* Port Scan Detection Logic
-* DNS Analysis
-* HTTP Traffic Extraction
-* Malware Traffic Detection
+* GeoIP Tracking
+* DNS Monitoring
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is intended strictly for:
+This project is developed strictly for:
 
 * Educational purposes
-* Cybersecurity practice
-* Lab environment analysis
+* Cybersecurity learning
+* Network traffic analysis in lab environments
 
 Do not use against unauthorized systems or networks.
 
